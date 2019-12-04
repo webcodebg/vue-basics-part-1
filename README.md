@@ -2,11 +2,12 @@
 Vue basics series
 
 # Installation
-To install this repo open cmd and clone the repo
+
+1. clone repo
 `git clone https://github.com/webcodebg/vue-basics-part-1.git`
-enter dir
+2. enter dir
 `cd vue-basics-part-1`
-install dependencies
+3. install dependencies
 `npm install`
-run the project
+4. run the project
 `npm run serve`
