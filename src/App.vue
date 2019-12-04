@@ -1,32 +1,29 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+      <div v-for="(todo, i) in todos" :key="i">
+        {{i }} {{todo}} <button @click="removeTodo(i)">remove TODO</button>
+      </div>
+      <input type="text" v-model="todoText"> <button @click="addTodo">add todo</button>
   </div>
 </template>
+<script>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+export default {
+    data(){
+        return {
+            todos: [],
+            todoText: ''
+        }
+    },
+    methods: {
+      addTodo(){
+        this.todos.push(this.todoText)
+        this.todoText = ''
+      },
+      removeTodo(i){
+        this.todos.splice(i, 1)
+      }
     }
-  }
 }
-</style>
+</script>
